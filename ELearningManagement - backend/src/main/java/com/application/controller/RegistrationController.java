@@ -1,16 +1,14 @@
 package com.application.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.application.model.Professor;
 import com.application.model.User;
 import com.application.services.ProfessorService;
 import com.application.services.UserService;
 
 @RestController
+@RequestMapping("/api")
 public class RegistrationController 
 {
 	@Autowired

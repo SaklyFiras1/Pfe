@@ -1,5 +1,5 @@
 
-FROM node:12.12.9-alpine as build-stage
+FROM node:alpine as build-stage
 WORKDIR /app
 COPY package*.json ./
 RUN npm install --force

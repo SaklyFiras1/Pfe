@@ -24,12 +24,12 @@ public class LoginController
     }
 	
 	@PostMapping("/loginuser")
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://frontend-service:4200")
 	public User loginUser(@RequestBody User user) throws Exception
 	{
 		String currEmail = user.getEmail();
 		String currPassword = user.getPassword();
-		
+
 		User userObj = null;
 		if(currEmail != null && currPassword != null)
 		{
@@ -38,17 +38,17 @@ public class LoginController
 		if(userObj == null)
 		{
 			throw new Exception("User does not exists!!! Please enter valid credentials...");
-		}		
+		}
 		return userObj;
 	}
-	
+
 	@PostMapping("/loginprofessor")
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://frontend-service:4200")
 	public Professor loginDoctor(@RequestBody Professor professor) throws Exception
 	{
 		String currEmail = professor.getEmail();
 		String currPassword = professor.getPassword();
-		
+
 		Professor professorObj = null;
 		if(currEmail != null && currPassword != null)
 		{
@@ -57,7 +57,7 @@ public class LoginController
 		if(professorObj == null)
 		{
 			throw new Exception("Professor does not exists!!! Please enter valid credentials...");
-		}		
+		}
 		return professorObj;
 	}
 }
